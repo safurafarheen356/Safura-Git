@@ -9,5 +9,3 @@ The user can choose pizza size, add pepperoni, and add extra cheese.
 - Option to add pepperoni
 - Option to add extra cheese
 - Calculates and displays the final bill
-
-🔗 **Try it live:** [Pizza Order Project on Replit](https://replit.com/@safura35627/Pizza-Order-Project?v=1)
