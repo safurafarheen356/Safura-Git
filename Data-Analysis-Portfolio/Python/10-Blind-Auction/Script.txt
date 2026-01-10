@@ -1,0 +1,27 @@
+from art import logo
+
+print(logo)
+print("Welcome to the secret auction program.")
+
+bids = {}
+continue_bidding = True
+
+while continue_bidding:
+    name = input("What is your name?: ")
+    bid = int(input("What's your bid?: $"))
+    bids[name] = bid
+
+    should_continue = input(
+        "Are there any other bidders? Type 'yes' or 'no':\n"
+    ).lower()
+
+    print("\n" * 100)
+
+    if should_continue == "no":
+        highest_bidder = max(bids, key=bids.get)
+        highest_bid = bids[highest_bidder]
+
+        print(
+            f"The winner is {highest_bidder} with a bid of ${highest_bid}"
+        )
+        continue_bidding = False
