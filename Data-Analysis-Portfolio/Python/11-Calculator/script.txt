@@ -1,0 +1,44 @@
+
+import art
+
+def add(n1, n2):
+    return n1 + n2
+
+def sub(n1, n2):
+    return n1 - n2
+
+def mul(n1, n2):
+    return n1 * n2
+
+def div(n1, n2):
+    return n1 / n2
+
+
+def calculator():
+    print(art.logo)
+    first_number=float(input("what's the first number?: "))
+    continue_cal=True
+    while continue_cal:
+        operations = {"+": add,
+                      "-": sub,
+                      "*": mul,
+                      "/": div}
+
+        for symbol in operations:
+            print(symbol)
+        operation_symbol=input("Pick an operation: ")
+        second_number=float(input("What's the next number?: "))
+        result=operations[operation_symbol](first_number, second_number)
+        print(first_number,operation_symbol,second_number,"=",result)
+
+        cont=input(f"Type 'y' to continue calculating with {result} or type 'n' to start a new calculation or type 's' to stop: ").lower().strip()
+
+        if cont=='y':
+            first_number=result
+        elif cont=='s':
+            exit()
+        else:
+            continue_cal=False
+            print("\n"*100)
+            calculator()
+calculator()
